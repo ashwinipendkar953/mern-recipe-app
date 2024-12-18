@@ -5,7 +5,7 @@ import useFetch from "../useFetch";
 
 const Home = () => {
   const { data, loading, error } = useFetch(
-    "https://b8130d2b-1e71-49fd-a65f-942326f87ed8-00-p9c3wsr4xudz.sisko.replit.dev/recipes",
+    "https://mern-recipe-api.vercel.app/recipes"
   );
 
   const [recipes, setRecipes] = useState([]);
@@ -21,7 +21,7 @@ const Home = () => {
     }
 
     const filterRecipes = data.filter((recipe) =>
-      recipe.recipeName.toLowerCase().includes(searchInput.toLowerCase()),
+      recipe.recipeName.toLowerCase().includes(searchInput.toLowerCase())
     );
 
     setRecipes(filterRecipes);
