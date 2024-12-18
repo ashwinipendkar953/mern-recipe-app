@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const AddRecipe = () => {
   const initialRecipeData = {
@@ -19,8 +19,8 @@ const AddRecipe = () => {
         name === "ingredients" || name === "instructions"
           ? value.split(",").map((item) => item.trim())
           : name === "instructions"
-            ? value.split("\n").map((item) => item.trim())
-            : value,
+          ? value.split("\n").map((item) => item.trim())
+          : value,
     }));
   };
 
@@ -28,14 +28,14 @@ const AddRecipe = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        "https://b8130d2b-1e71-49fd-a65f-942326f87ed8-00-p9c3wsr4xudz.sisko.replit.dev/recipes",
+        "https://mern-recipe-api.vercel.app/recipes",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        },
+        }
       );
 
       if (!response.ok) {
