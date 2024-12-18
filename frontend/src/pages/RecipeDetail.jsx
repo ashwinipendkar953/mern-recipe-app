@@ -1,10 +1,11 @@
+import React from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../useFetch";
 
 const RecipeDetail = () => {
   const { recipeId } = useParams();
   const { data: recipes } = useFetch(
-    "https://b8130d2b-1e71-49fd-a65f-942326f87ed8-00-p9c3wsr4xudz.sisko.replit.dev/recipes",
+    "https://mern-recipe-api.vercel.app/recipes"
   );
   const recipe = recipes?.find((recipe) => recipe._id == recipeId);
 
@@ -13,14 +14,14 @@ const RecipeDetail = () => {
       {recipe && (
         <>
           <h1>{recipe.recipeName}</h1>
-          <div className="card " style={{height: "500px"}}>
+          <div className="card " style={{ height: "500px" }}>
             <div className="row">
               <div className="col-md-4">
                 <img
                   src={recipe.recipeImageUrl}
                   className="img-fluid"
                   alt={recipe.recipeName}
-                  style={{height: "500px"}}
+                  style={{ height: "500px" }}
                 />
               </div>
               <div className="col-md-8">
