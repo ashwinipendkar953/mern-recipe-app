@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DisplayRecipes from "../components/DisplayRecipes";
 import SearchRecipe from "../components/SearchRecipe";
 import useFetch from "../useFetch";
