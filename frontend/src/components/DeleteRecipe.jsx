@@ -1,11 +1,13 @@
+import React from "react";
+
 const DeleteRecipe = ({ recipeId }) => {
   const deleteHandler = async (recipeId) => {
     try {
       const response = await fetch(
-        `https://b8130d2b-1e71-49fd-a65f-942326f87ed8-00-p9c3wsr4xudz.sisko.replit.dev/recipes/${recipeId}`,
+        `https://mern-recipe-api.vercel.app/recipes/${recipeId}`,
         {
           method: "DELETE",
-        },
+        }
       );
 
       if (!response.ok) {
